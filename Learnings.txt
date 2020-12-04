@@ -5,5 +5,6 @@ Try to visualize the solution with smallest input possible to get to the solutio
 
 Break the problem as small as possible.
 
+just checking
 
 
