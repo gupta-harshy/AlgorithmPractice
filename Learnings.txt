@@ -1,0 +1,9 @@
+﻿Make sure you have complete focus on the work in hand.
+
+Try to visualize the solution with smallest input possible to get to the solution.
+	It will help in debugging the code step by step.
+
+Break the problem as small as possible.
+
+
+
