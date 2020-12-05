@@ -7,6 +7,11 @@ namespace ConsoleApp1
     class LinkedListReverse<T>
     {
         private Node<T> start = null;
+        public Node<T> Start
+        {
+            get;
+            private set;
+        }
         public class Node<T>
         {
             public T val;
@@ -95,7 +100,8 @@ namespace ConsoleApp1
             //Console.WriteLine();
             //linkedListReverse.ReverseLinkedListRecursive();
             //linkedListReverse.DisplayLinkedList();
-            linkedListReverse.NElementFromLast(3);
+            //linkedListReverse.NElementFromLast(3);
+            linkedListReverse.PrintLinkedlistReverse();
             //Console.ReadKey();
         }
         public void NElementFromLast(int n)
@@ -119,7 +125,6 @@ namespace ConsoleApp1
             }
             Console.WriteLine(nnode.val);
         }
-
         public bool HasCycle(Node<T> head)
         {
             if (head == null)
@@ -145,6 +150,38 @@ namespace ConsoleApp1
                 }
             }
             return false;
+        }
+        public Node<T> GetIntersectionNode(Node<T> headA, Node<T> headB)
+        {
+            Node<T> lt = null;
+            Node<T> temp = headB;
+            while (headA != null)
+            {
+                while (temp != null)
+                {
+                    if (headA == temp)
+                    {
+                        return headA;
+                    }
+                    temp = temp.next;
+                }
+                headA = headA.next;
+                temp = headB;
+            }
+            return lt;
+        }
+        public void PrintLinkedlistReverse()
+        {
+            Node<T> temp = start;
+            PrintLinkedlistReverse(temp);
+        }
+        private void PrintLinkedlistReverse(Node<T> node)
+        {
+            if (node != null)
+            {
+                PrintLinkedlistReverse(node.next);
+                Console.Write(node.val + " ");
+            }
         }
     }
 }
