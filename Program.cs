@@ -411,8 +411,8 @@ namespace ConsoleApp1
             //Console.ReadKey();
 
             //Linked List Reverse
-            LinkedListReverse<int> linkedListReverse = new LinkedListReverse<int>();
-            linkedListReverse.LinkedListMain();
+            //LinkedListReverse<int> linkedListReverse = new LinkedListReverse<int>();
+            //linkedListReverse.LinkedListMain();
 
             //sorting
             //int[] nums = new int[] { 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
@@ -425,14 +425,17 @@ namespace ConsoleApp1
             //}
 
             //SubArray
+            int[] nums = new int[] { -2, 1, -3, 4, -1, 2, 1, -5, 4 };
             //int[] nums = new int[] { 1, 4, 0, 0, 3, 10, 5 };
-            //SubArray subArray = new SubArray();
+            SubArray subArray = new SubArray();
             //subArray.SortArray(nums);
             //Console.WriteLine(subArray.FindSubArrayOfGivenSum2(nums, 7));
             //foreach (int a in nums)
             //{
             //    Console.Write(a + " ");
             //}
+            //Console.WriteLine(subArray.MaxSubArray(nums));
+            MwayTree.Start();
             Console.ReadKey();
         }
     }

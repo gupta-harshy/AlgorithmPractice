@@ -69,5 +69,20 @@ namespace ConsoleApp1
             arr[source] = arr[destination];
             arr[destination] = temp;
         }
+
+        //Input: nums = [-2,1,-3,4,-1,2,1,-5,4]
+        //Output: 6
+        //Explanation: [4,-1,2,1] has the largest sum = 6.
+        public int MaxSubArray(int[] nums)
+        {
+            int max;
+            int maxima = max = nums[0];
+            for (int i = 1; i<nums.Length; i++)
+            {
+                maxima = Math.Max(maxima + nums[i], nums[i]);
+                max = max < maxima ? maxima : max;
+            }
+            return max;
+        }
     }
 }
