@@ -55,7 +55,6 @@ namespace ConsoleApp1
                     break;
                 }
             }
-            // over
         }
 
         private void AddkeyMovingToNextNode(Node node, int index, int key)
@@ -70,6 +69,91 @@ namespace ConsoleApp1
             }
         }
 
+        public bool SearchElement(int key)
+        {
+            return SearchElement(key, root) == null ? false: true;
+        }
+
+        private Node SearchElement(int key, Node node)
+        {
+            if (node == null)
+            {
+                return null;
+            }
+            for (int i = 0; i < node.keys.Length; i++)
+            {
+                if (key == node.keys[i])
+                {
+                    return node;
+                }
+                else if (key > node.keys[i])
+                {
+                    if (i == node.keys.Length - 1)
+                    {
+                        return SearchElement(key, node.pointers[3]);
+                    }
+                }
+                else
+                {
+                    return SearchElement(key, node.pointers[i]);
+                }
+            }
+            return null;
+        }
+
+        public void DeleteElement(int key)
+        {
+            Node node = SearchElement(key, root);
+            if (node == null)
+            {
+                // No node to delete
+            }
+            else
+            {
+                DeleteElement(key, node);
+            }
+        }
+
+        private void DeleteElement(int key, Node node)
+        {
+            int index = 0;
+            for (int i = 0; i < node.keys.Length; i++)
+            {
+                if (node.keys[i] == key)
+                {
+                    index = i;
+                }
+            }
+            Node left = node.pointers[index];
+            Node right = node.pointers[index+1];
+            if (left == null && right == null)
+            {
+                node.keys[index] = int.MinValue;
+            }
+            else if (left != null)
+            {
+                int leftMaxKey = FindMaxElementInNode(left);
+                node.keys[index] = leftMaxKey;
+                DeleteElement(leftMaxKey, left);
+            }
+            else if (right != null)
+            {
+                int rightMaxKey = FindMaxElementInNode(right);
+                node.keys[index] = rightMaxKey;
+                DeleteElement(rightMaxKey, right);
+            }
+        }
+
+        private int FindMaxElementInNode(Node node)
+        {
+            int max = int.MinValue;
+            foreach(int n in node.keys)
+            {
+                max = (max < n) ? n : max;
+            }
+            return max;
+        }
+
         public void DisplayTree()
         {
             Queue<Node> nodes = new Queue<Node>();
@@ -79,7 +163,7 @@ namespace ConsoleApp1
                 Node node = nodes.Dequeue();
                 foreach (int n in node.keys)
                 {
-                    Console.Write(n + " ");
+                    Console.Write(n == int.MinValue ? "X " : n  + " ");
                 }
                 Console.WriteLine();
                 foreach (Node n in node.pointers)
@@ -101,6 +185,11 @@ namespace ConsoleApp1
             {
                mwayTree.Addkey(n);
             }
+            mwayTree.DisplayTree();
+            Console.WriteLine(mwayTree.SearchElement(99));
+            Console.WriteLine(mwayTree.SearchElement(121));
+            mwayTree.DeleteElement(45);
+            Console.WriteLine("Tree After Deletion");
             mwayTree.DisplayTree();
         }
     }
