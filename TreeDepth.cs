@@ -92,7 +92,6 @@ namespace ConsoleApp1
             TreeNode treeNode3 = new TreeNode(3, treeNode9, treeNode20);
             return LeftSide(treeNode3);
         }
-        
     }
 
     public class Test

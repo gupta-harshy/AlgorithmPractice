@@ -415,19 +415,20 @@ namespace ConsoleApp1
             //linkedListReverse.LinkedListMain();
 
             //sorting
-            //int[] nums = new int[] { 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
+            int[] nums = new int[] { 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
             //int[] nums = new int[] { 0, 1, 1, 0, 1, 2, 1, 2, 0, 0, 0, 1 };
-            //Sort sort = new Sort();
+            Sort sort = new Sort();
             //sort.QuickSort(nums, 0, nums.Length - 1);
+            sort.MergeSort(nums);
             //foreach (int a in nums)
             //{
             //    Console.Write(a + " ");
             //}
 
             //SubArray
-            int[] nums = new int[] { -2, 1, -3, 4, -1, 2, 1, -5, 4 };
+            //int[] nums = new int[] { -2, 1, -3, 4, -1, 2, 1, -5, 4 };
             //int[] nums = new int[] { 1, 4, 0, 0, 3, 10, 5 };
-            SubArray subArray = new SubArray();
+            //SubArray subArray = new SubArray();
             //subArray.SortArray(nums);
             //Console.WriteLine(subArray.FindSubArrayOfGivenSum2(nums, 7));
             //foreach (int a in nums)
@@ -435,7 +436,7 @@ namespace ConsoleApp1
             //    Console.Write(a + " ");
             //}
             //Console.WriteLine(subArray.MaxSubArray(nums));
-            MwayTree.Start();
+            //MwayTree.Start();
             Console.ReadKey();
         }
     }

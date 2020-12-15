@@ -39,6 +39,59 @@ namespace ConsoleApp1
             }
         }
 
+        public void MergeSort(int []arr)
+        {
+            foreach (int a in MergeSort(arr, 0, arr.Length - 1))
+            {
+                Console.Write(a + " ");
+            };
+        }
+
+        private int[] MergeSort(int []arr, int l, int r)
+        {
+            int mid = l + (r - l) / 2;
+            if (l >= r)
+            {
+                return SliceArray(arr, l, r);
+            }
+            int []leftArray = MergeSort(arr, l, mid);
+            int []rightArray = MergeSort(arr, mid + 1, r);
+            // combine 
+            int []arrNew = new int[leftArray.Length + rightArray.Length];
+            int i = 0, j = 0, k = 0;
+            while (i < leftArray.Length && j < rightArray.Length)
+            {
+                if (leftArray[i] < rightArray[j])
+                {
+                    arrNew[k++] = leftArray[i++];
+                }
+                else
+                {
+                    arrNew[k++] = rightArray[j++];
+                }
+            }
+            while(i < leftArray.Length)
+            {
+                arrNew[k++] = leftArray[i++];
+            }
+            while(i <  rightArray.Length)
+            {
+                arrNew[k++] = rightArray[j++];
+            }
+            return arrNew;
+        }
+
+        private int[] SliceArray(int []arr, int l, int r)
+        {
+            int[] temp = new int[r - l + 1];
+            int i = 0;
+            for (int k = l; k <= r; k++)
+            {
+                temp[i++] = arr[k];
+            }
+            return temp;
+        }
+
         private int Partition(int []arr, int l, int h)
         {
             int p = l + ((h - l) / 2);

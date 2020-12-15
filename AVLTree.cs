@@ -291,5 +291,22 @@ namespace ConsoleApp1
                 }
             }
         }
+        public int CalculateLeafNodes(Node node)
+        {
+            int sum = 0;
+            if (node == null)
+            {
+                return 0;
+            }
+            else if (node.left == null && node.right == null)
+            {
+                return 1;
+            }
+            else
+            {
+                sum = sum + CalculateLeafNodes(node.left) + CalculateLeafNodes(node.right);
+                return sum;
+            }
+        }
     }
 }
