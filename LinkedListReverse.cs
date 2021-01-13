@@ -183,5 +183,41 @@ namespace ConsoleApp1
                 Console.Write(node.val + " ");
             }
         }
+
+        public void SortLinkList(Node<int> start1, Node<int> start2)
+        {
+            Node<int> list1 = start1;
+            Node<int> list2 = start2;
+            Node<int> start = null;
+            Node<int> temp = null;
+            while (list1 != null && list2 != null)
+            {
+                if (list1.val <=  list2.val)
+                {
+                    if (start == null)
+                    {
+                        start = temp = new Node<int>(list1.val);
+                    }
+                    temp.next = new Node<int>(list1.val);
+                }
+                else
+                {
+                    if (start == null)
+                    {
+                        start = temp = new Node<int>(list2.val);
+                    }
+                    temp.next = new Node<int>(list2.val);
+                }
+            }
+            while (list1 != null)
+            {
+                temp.next = new Node<int>(list1.val);
+            }
+            while (list2 != null)
+            {
+                temp.next = new Node<int>(list2.val);
+            }
+
+        }
     }
 }

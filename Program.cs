@@ -415,11 +415,11 @@ namespace ConsoleApp1
             //linkedListReverse.LinkedListMain();
 
             //sorting
-            int[] nums = new int[] { 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
+            //int[] nums = new int[] { 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
             //int[] nums = new int[] { 0, 1, 1, 0, 1, 2, 1, 2, 0, 0, 0, 1 };
-            Sort sort = new Sort();
+            //Sort sort = new Sort();
             //sort.QuickSort(nums, 0, nums.Length - 1);
-            sort.MergeSort(nums);
+            //sort.MergeSort(nums);
             //foreach (int a in nums)
             //{
             //    Console.Write(a + " ");
@@ -437,6 +437,15 @@ namespace ConsoleApp1
             //}
             //Console.WriteLine(subArray.MaxSubArray(nums));
             //MwayTree.Start();
+            var b = new Btree2(5);
+            //int[] nums = new int[] { 1, 7, 6, 2, 11, 4, 8, 13, 10, 5, 19, 9, 18, 24, 3, 12, 14, 20, 21, 16 };
+            int[] nums = new int[] { 1, 7, 6, 2, 11, 4, 8, 13, 10 };
+            foreach (int a in nums)
+            {
+                b.Insert(a);
+            }
+            //b.Insert(10);
+            b.display(b.Root);
             Console.ReadKey();
         }
     }
