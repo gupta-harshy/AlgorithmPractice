@@ -437,15 +437,26 @@ namespace ConsoleApp1
             //}
             //Console.WriteLine(subArray.MaxSubArray(nums));
             //MwayTree.Start();
-            var b = new Btree2(5);
+            //var b = new Btree3(5);
+            ////int[] nums = new int[] { 1, 7, 6, 2, 11, 4, 8, 13, 10, 5, 19, 9, 18, 24, 3, 12, 14, 20, 21, 16 };
             //int[] nums = new int[] { 1, 7, 6, 2, 11, 4, 8, 13, 10, 5, 19, 9, 18, 24, 3, 12, 14, 20, 21, 16 };
-            int[] nums = new int[] { 1, 7, 6, 2, 11, 4, 8, 13, 10 };
-            foreach (int a in nums)
+            //foreach (int a in nums)
+            //{
+            //    b.Insert(a);
+            //}
+            ////b.Insert(16);
+            ////b.display(b.Root);
+            //b.Delete(2);
+            //b.display(b.Root);
+            Decimal valueDecimal;
+            bool valid = Decimal.TryParse("anything", out valueDecimal);
+            Console.WriteLine(valueDecimal);
+            Console.WriteLine(valid);
+            if (valid || string.IsNullOrEmpty(""))
             {
-                b.Insert(a);
+                Console.WriteLine(valueDecimal);
+                Console.WriteLine(string.Empty == "");
             }
-            //b.Insert(10);
-            b.display(b.Root);
             Console.ReadKey();
         }
     }

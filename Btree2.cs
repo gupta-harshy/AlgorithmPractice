@@ -135,7 +135,6 @@ namespace ConsoleApp1
                     display(x.pointers[i]);
                 }
             }
-            
         }
 
         public void Start(int n)
