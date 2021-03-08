@@ -448,16 +448,17 @@ namespace ConsoleApp1
             ////b.display(b.Root);
             //b.Delete(2);
             //b.display(b.Root);
-            Decimal valueDecimal;
-            bool valid = Decimal.TryParse("anything", out valueDecimal);
-            Console.WriteLine(valueDecimal);
-            Console.WriteLine(valid);
-            if (valid || string.IsNullOrEmpty(""))
-            {
-                Console.WriteLine(valueDecimal);
-                Console.WriteLine(string.Empty == "");
-            }
-            Console.ReadKey();
+            //Decimal valueDecimal;
+            //bool valid = Decimal.TryParse("anything", out valueDecimal);
+            //Console.WriteLine(valueDecimal);
+            //Console.WriteLine(valid);
+            //if (valid || string.IsNullOrEmpty(""))
+            //{
+            //    Console.WriteLine(valueDecimal);
+            //    Console.WriteLine(string.Empty == "");
+            //}
+            new Graph1().Initialization();
+            //Console.ReadKey();
         }
     }
 }
